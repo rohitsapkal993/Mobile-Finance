@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://code.jquery.com https://ssl.gstatic.com https://apisandbox.openbankproject.com 'unsafe-eval'; style-src 'self' code.jquery.com 'unsafe-inline'; media-src *; img-src 'self' code.jquery.com data: content:;">        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="img/images.jpg">
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js" id="cordova-jquery"></script>
+        <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <title>Snehal Bank Project</title>
+    </head>
+    <body>
+    <div id="app">
+        <div id="deviceready">
+            <div data-role="page" id="page1">
+
+                <h1>Snehal Project</h1>
+                <p>Username</p>
+                <input id="user" type="text" placeholder="Enter Username" pattern="[a-z]*" />
+                 <!-- New style pattern for login page -->
+                 <style>
+                    input:invalid {
+                        animation: shake 300ms;
+                    }
+                    @keyframes shake {
+                        25% { transform: translateX(4px); }
+                        50% { transform: translateX(-4px); }
+                        75% { transform: translateX(4px); }
+                    }
+                </style>
+                <!-- New stuff is End login -->
+                <div>
+                    <p>Password</p>
+                    <input id="pass" type="password" placeholder="Enter Password"/>
+                </div>
+                <button id="loginbutton">Login</button>
+                <h1 id="indicator"></h1>
+            </div>
+
+            <div data-role="page" id="page2" >
+               <button id="databutton">Query Banks</button>
+            </div>
+
+            <div data-role="page" id="page3">
+                <table data-role="table" class="table-stripe ui-responsive" data-mode="columntoggle" data-column-btn-text="Hide/unhide Columns">
+                    
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th data-priority="2">Short Name</th>
+                        <th data-priority="3">ID</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
+                </table>
+            </div>
+            <div data-role="page" id="page4">
+                <table data-role="table" class="table-stripe ui-responsive">
+                    <thead>
+                        <tr>
+                            <th>Account ID</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody2"></tbody>
+                </table>
+                <button id="backbutton4"><a href="#page3">Back</a></button>
+            </div>
+            <div data-role="page" id="page5">
+                <table data-role="table" class="table-stripe ui-responsive" data-mode="columntoggle" data-column-btn-text="Hide/unhide Columns">
+                    <thead>
+                        <tr>
+                            <th data-priority="1">Date</th>
+                            <th data-priority="2">Description</th>
+                            <th id="amnt" data-priority="3"></th>
+                            <th id="bal" data-priority="4"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody3"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
